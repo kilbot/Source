@@ -241,7 +241,9 @@ if (!module.parent) {
     var serverOpts = global.opts.core.server;
     var port = serverOpts.port;
 
-    #app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
+    /*
+    app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
+    */
     console.log(port);
     console.log(global.opts.core.server);
     console.log(process.env.NODE_ENV);
