@@ -24,6 +24,7 @@ var app = global.app = express();
 
 var loadOptions = require('./core/loadOptions');
 global.opts = loadOptions();
+console.log(global);
 
 // Arguments parse */
 commander
