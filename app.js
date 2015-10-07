@@ -24,7 +24,6 @@ var app = global.app = express();
 
 var loadOptions = require('./core/loadOptions');
 global.opts = loadOptions();
-console.log(global);
 
 // Arguments parse */
 commander
@@ -239,7 +238,7 @@ app.use(logErrors);
 /* Server start */
 if (!module.parent) {
     var serverOpts = global.opts.core.server;
-    var port = serverOpts.port;
+    var port = process.env.PORT;
 
     app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
     log.info('[SOURCEJS] launched on http://127.0.0.1:'.blue + (port.toString()).red + ' in '.blue + MODE.blue + ' mode...'.blue);
