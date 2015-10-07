@@ -241,7 +241,11 @@ if (!module.parent) {
     var serverOpts = global.opts.core.server;
     var port = serverOpts.port;
 
-    app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
+    #app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
+    console.log(port);
+    console.log(global.opts.core.server);
+    console.log(process.env.NODE_ENV);
+    app.listen(port);
     log.info('[SOURCEJS] launched on http://127.0.0.1:'.blue + (port.toString()).red + ' in '.blue + MODE.blue + ' mode...'.blue);
 
     if (commander.test) {
