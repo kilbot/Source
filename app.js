@@ -13,7 +13,6 @@ var path = require('path');
 var commander = require('commander');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-global.__dirname = global.__dirname || process.cwd(); // heroku fix
 
 /* Globals */
 // Define absolute path to app, normalizing windows disk name
@@ -241,13 +240,7 @@ if (!module.parent) {
     var serverOpts = global.opts.core.server;
     var port = serverOpts.port;
 
-    /*
     app.listen(port, serverOpts.hostname, serverOpts.backlog, serverOpts.callback);
-    */
-    console.log(port);
-    console.log(global.opts.core.server);
-    console.log(process.env.PORT);
-    app.listen(process.env.PORT);
     log.info('[SOURCEJS] launched on http://127.0.0.1:'.blue + (port.toString()).red + ' in '.blue + MODE.blue + ' mode...'.blue);
 
     if (commander.test) {
