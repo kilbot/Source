@@ -246,8 +246,8 @@ if (!module.parent) {
     */
     console.log(port);
     console.log(global.opts.core.server);
-    console.log(process.env.NODE_ENV);
-    app.listen(port);
+    console.log(process.env.PORT);
+    app.listen(process.env.PORT);
     log.info('[SOURCEJS] launched on http://127.0.0.1:'.blue + (port.toString()).red + ' in '.blue + MODE.blue + ' mode...'.blue);
 
     if (commander.test) {
