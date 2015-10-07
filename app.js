@@ -13,6 +13,7 @@ var path = require('path');
 var commander = require('commander');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
+global.__dirname = global.__dirname || process.cwd(); // heroku fix
 
 /* Globals */
 // Define absolute path to app, normalizing windows disk name
